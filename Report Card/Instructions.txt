@@ -1,0 +1,11 @@
+//Bhuwanesh Nainwal
+
+1> Extract the zip folder in a particular folder lets say "folder".
+2> Inside the folder you will see pdfGenerator.exe file
+3> Run the .exe file and wait for few seconds
+4> Pdf files will start to appear inside the same folder one by one.
+------------------------------------------------------------------------
+				EXTRAS
+1> I have used my all the knowledge of python and I have also provided the code entirely written by me.
+2> Libraries that I have used are openpyxl , fpdf , PIL , matplotlib etc.
+3> Tools that I have used are pyinstaller etc
