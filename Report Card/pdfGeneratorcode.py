@@ -191,7 +191,7 @@ for i in range(0 , temp):
         img_png.save(imagepath)
         student = imagepath
         pdf = FPDF('P', 'mm', 'A4')
-
+        pdf
         pdf.set_text_color(18, 17, 17)
         # Add a page
         pdf.add_page()
