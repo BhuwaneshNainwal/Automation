@@ -4,7 +4,6 @@ from reportlab.lib.pagesizes import A4
 import openpyxl
 from fpdf import FPDF
 from PIL import Image
-import matplotlib.pyplot as plt
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.utils import ImageReader
@@ -18,18 +17,16 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib.pagesizes import letter, inch
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import stringWidth
+from reportlab.graphics.shapes import Drawing
 import unicodedata
-
+import matplotlib.pyplot as plt
+import pandas as pd
 scored = {}
 def barSave(responses , temp):
 
-    tick_label = []
-    left = []
-    # heights of bars
-    height = []
+
     totalMarks = 0
-
-
     correct = {}
 
 
@@ -49,6 +46,8 @@ def barSave(responses , temp):
 
             j = j + 10
         scored[i] = score
+
+
 
 
 
@@ -570,41 +569,41 @@ for i in range(0 , 1):
 
     pgone.setFillColorRGB(0,0,0)
 
-    pgone.setFont('Helvetica-Bold', 11)
-    heading = firstName[i] + "'s'"
+    heading = firstName[i] + "'s"
     pgone.drawString(x + 13 , y - 610.1 , heading)
-
+    textwidth = stringWidth(heading , 'Helvetica-Bold', 11)
+    x = x + textwidth + 14
     pgone.setFont('Helvetica', 11)
     heading = " overall percentile in the world is "
-    pgone.drawString(x + 57 , y - 610 , heading)
+    pgone.drawString(x , y - 610 , heading)
 
     pgone.setFont('Helvetica-Bold', 11)
     heading = str(percentile[i]) + "%ile."
-    pgone.drawString(x + 218 , y - 610.1 , heading)
+    pgone.drawString(x + 165 , y - 610.1 , heading)
 
     heading = "This indicates that " + str(firstName[i]) + "'s' " + "has scored more than "
     pgone.setFont('Helvetica', 11)
-    pgone.drawString(x + 274 , y - 610 , heading)
+    pgone.drawString(x + 227 , y - 610 , heading)
 
     heading = str(percentile[i]) + '%'
     pgone.setFont('Helvetica-Bold', 11)
-    pgone.drawString(x + 524 , y - 610 , heading)
+    pgone.drawString(x + 471 , y - 610 , heading)
 
     heading = " of students in the World and lesser than "
     pgone.setFont('Helvetica', 11)
-    pgone.drawString(x + 564.6 , y - 610 , heading)
+    pgone.drawString(x + 510.6 , y - 610 , heading)
 
     heading = str(calc) + '%'
     pgone.setFont('Helvetica-Bold', 11)
-    pgone.drawString(x + 770 , y - 610 , heading)
+    pgone.drawString(x + 712 , y - 610 , heading)
 
     heading = " of students"
     pgone.setFont('Helvetica', 11)
-    pgone.drawString(x + 809.4 , y - 610 , heading)
+    pgone.drawString(x + 752.4 , y - 610 , heading)
 
     heading = " in the world."
     pgone.setFont('Helvetica', 11)
-    pgone.drawString(x + 11.3 , y - 624 , heading)
+    pgone.drawString(x - 43 , y - 624 , heading)
 
 
 
@@ -689,9 +688,157 @@ for i in range(0 , 1):
     table.wrapOn(pgone, width, height)
     table.drawOn(pgone , 216.4*mm, 75.9*mm)
 
+#---------------------------------------------------------------------------------------Bar Graoh------------------------------------------------------------------------------------------------------------------#
+
+    frequencies = [scored[i] , averageScore[i] , medianScore[i] , modeScore[i]]
+    freq_series = pd.Series(frequencies)
+
+    x_labels = [firstName[i] , "Average" , "Median" , "Mode"]
+
+    # Plot the figure.
+    plt.figure(figsize=(5, 5.6))
+    plt.rcParams.update({'font.family':'sans-serif'} )
+    ax = freq_series.plot(kind="bar" , width = 0.4 , color='blue')
+    ax.set_title('Comparison of Scores' , size = 14)
+    ax.set_xlabel('')
+    ax.set_ylabel("Score" , size = 12)
+    ax.set_xticklabels(x_labels , rotation='horizontal'  , fontweight='bold')
+    plt.xticks(rotation = 7)
+
+    rects = ax.patches
+
+    # Make some labels.
+    scr = scored[i]
+    avgscr = averageScore[i]
+    mdnscr = medianScore[i]
+    mdscr = modeScore[i]
+
+    if not isinstance(scr , float):
+        scr = float(scr)
+        scr = format(scr , '.2f')
+    else:
+        scr = format(scr , '.2f')
+
+    if not isinstance(avgscr , float):
+        avgscr = float(avgscr)
+        avgscr = format(avgscr , '.2f')
+    else:
+        avgscr = format(avgscr , '.2f')
+
+    if not isinstance(mdnscr , float):
+        mdnscr = float(mdnscr)
+        mdnscr = format(mdnscr , '.2f')
+    else:
+        mdnscr = format(mdnscr , '.2f')
+
+
+    if not isinstance(mdscr , float):
+        mdscr = float(mdscr)
+        mdscr = format(mdscr , '.2f')
+    else:
+        mdscr = format(mdscr , '.2f')
+
+    labels = [scr , avgscr , mdnscr , mdscr]
+
+    for rect, label in zip(rects, labels):
+        height = rect.get_height()
+        ax.text(
+            rect.get_x() + rect.get_width() / 2 , height + 3.45, label, ha="center", va="top"
+        )
+
+    plt.savefig("data1.png")
+
+#--------------------------------------------------------------------------------------------------------------------------#
+
+    frequencies = [nameAttempts[i] , averageAttempts[i]]
+    freq_series = pd.Series(frequencies)
+
+    x_labels = [firstName[i] , "World"]
+
+    # Plot the figure.
+    plt.figure(figsize=(4.8, 5.6))
+    plt.rcParams.update({'font.family':'sans-serif'} )
+    ax = freq_series.plot(kind="bar" , width = 0.22 , color='blue')
+    ax.set_title('Comparison of Attempts (%)' , size = 14)
+    ax.set_xlabel('')
+    ax.set_ylabel("Attempts (%)" , size = 12)
+    ax.set_xticklabels(x_labels , rotation='horizontal'  , fontweight='bold')
+    plt.xticks(rotation = 7)
+
+    rects = ax.patches
+
+    # Make some labels.
+    nmatmpt = nameAttempts[i]
+    avgatmpt = averageAttempts[i]
+
+    if not isinstance(nmatmpt , float):
+        nmatmpt = float(nmatmpt)
+        nmatmpt = format(nmatmpt , '.2f')
+    else:
+        nmatmpt = format(mdscr , '.2f')
+
+    if not isinstance(avgatmpt , float):
+        avgatmpt = float(avgatmpt)
+        avgatmpt = format(avgatmpt , '.2f')
+    else:
+        avgatmpt = format(avgatmpt , '.2f')
 
 
 
 
+    labels = [nmatmpt , avgatmpt]
 
-    pgone.save()
+    for rect, label in zip(rects, labels):
+        height = rect.get_height()
+        ax.text(
+            rect.get_x() + rect.get_width() / 2 , height + 3.45, label, ha="center", va="top"
+        )
+
+    plt.savefig("data2.png")
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+
+
+    frequencies = [nameAccuracy[i] * 100 , averageAccuracy[i] * 100]
+    freq_series = pd.Series(frequencies)
+
+    x_labels = [firstName[i] , "World"]
+
+    # Plot the figure.
+    plt.figure(figsize=(4.8, 7.6))
+    plt.rcParams.update({'font.family':'sans-serif'} )
+    ax = freq_series.plot(kind="bar" , width = 0.22 , color='blue')
+    ax.set_title('Comparison of Accuracy (%)' , size = 14)
+    ax.set_ylabel("Accuracy (%)" , size = 12)
+    ax.set_xticklabels(x_labels , rotation='horizontal'  , fontweight='bold')
+    plt.xticks(rotation = 7)
+
+    rects = ax.patches
+
+    # Make some labels.
+    nmacry = nameAccuracy[i] * 100
+    avgacry = averageAccuracy[i] * 100
+    if not isinstance(nmacry, float):
+        nmacry = float(nmacry)
+        nmacry = format(nmacry , '.2f')
+    else:
+        nmacry = format(nmacry , '.2f')
+
+    if not isinstance(avgacry , float):
+        avgacry = float(avgacry)
+        avgacry = format(avgacry , '.2f')
+    else:
+        avgacry = format(avgacry , '.2f')
+
+
+
+    labels = [nmacry , avgacry]
+
+    for rect, label in zip(rects, labels):
+        height = rect.get_height()
+        ax.text(
+            rect.get_x() + rect.get_width() / 2 , height + 2.5, label, ha="center", va="top"
+        )
+
+    plt.savefig("data3.png")
