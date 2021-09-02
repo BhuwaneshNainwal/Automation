@@ -23,7 +23,7 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.graphics.shapes import Drawing
 import unicodedata
 import matplotlib.pyplot as plt
-import pandas as pd
+
 scored = {}
 def barSave(responses , temp):
 

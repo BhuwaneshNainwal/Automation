@@ -21,3 +21,8 @@ C:\>cd project
 C:\project>git init
 C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation%202
 ```
+
+## Demo
+
+![Alt Text](C:\Users\harsh\Downloads\report.gif)
+
