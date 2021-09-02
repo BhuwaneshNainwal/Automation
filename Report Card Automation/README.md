@@ -24,5 +24,5 @@ C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/
 
 ## Demo
 
-![](https://github.com/Voyz/voyz_public/blob/master/databay_promo_vidA_gif_A03.gif)
+![](https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation/dist/report.gif)
 
