@@ -24,5 +24,5 @@ C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/
 
 ## Demo
 
-![](https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation/dist/report.gif)
+![](https://drive.google.com/drive/folders/1rMwO4swvpFlMOiaIBTg_TwRzDcJzr0qr/report.gif)
 
