@@ -16,7 +16,7 @@ Project is created with:
 To run this project, install it locally using npm:
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+1> Make sure git is installed on your system(https://git-scm.com/downloads Use this to download git).
+2> Create a folder and inside that folder initialise git (git init).
+3> Finally , clone this project on you system using git clone 
 ```
