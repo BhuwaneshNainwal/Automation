@@ -13,10 +13,11 @@ Project is created with:
 * Pyinstaller : To convert Python source code to .exe.
 	
 ## Setup
-To run this project, install it locally using npm:
+To run this project, install it locally using cmd:
 
 ```
-1> Make sure git is installed on your system(https://git-scm.com/downloads Use this to download git).
-2> Create a folder and inside that folder initialise git (git init).
-3> Finally , clone this project on you system using git clone 
+C:\>mkdir project
+C:\>cd project
+C:\>git init
+C:\>git clone 
 ```
