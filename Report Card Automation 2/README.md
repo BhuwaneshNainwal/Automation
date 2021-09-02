@@ -18,6 +18,6 @@ To run this project, install it locally using cmd:
 ```
 C:\>mkdir project
 C:\>cd project
-C:\>git init
-C:\>git clone 
+C:\project>git init
+C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation%202
 ```
