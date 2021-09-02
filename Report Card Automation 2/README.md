@@ -13,7 +13,7 @@ Project is created with:
 * Pyinstaller : To convert Python source code to .exe.
 	
 ## Setup
-To run this project, install it locally using cmd:
+To run this project, Clone it locally using cmd:
 
 ```
 C:\>mkdir project
