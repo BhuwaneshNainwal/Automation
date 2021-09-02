@@ -24,5 +24,5 @@ C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/
 
 ## Demo
 
-![Alt Text](C:\Users\harsh\Downloads\report.gif)
+![Working](https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation/dist/report.gif)
 
