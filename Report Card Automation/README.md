@@ -13,7 +13,7 @@ Project is created with:
 * Python 2.7 : Source Code is written in Python language.
 * Libraries : Reportlab - To generate Pdfs, Openpyxl - To read data from excel file , Metaplotlib - To draw graphs inside Pdfs.
 * Pyinstaller : To convert Python source code to .exe.
-	
+* 	
 ## Setup
 To run this project, Clone it locally using cmd:
 
@@ -23,8 +23,6 @@ C:\>cd project
 C:\project>git init
 C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation%202
 ```
-
-...snip...    
 <a name="demo"/>
 ## Demo
 ![](https://github.com/BhuwaneshNainwal/Python-Automation/blob/master/Report%20Card%20Automation/dist/report.gif)
