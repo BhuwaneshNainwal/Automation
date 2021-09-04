@@ -23,7 +23,7 @@ C:\>cd project
 C:\project>git init
 C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/master/Report%20Card%20Automation%202
 ```
-...snip...    
+
 <a name="demo"/>
 ## Demo
 ![](https://github.com/BhuwaneshNainwal/Python-Automation/blob/master/Report%20Card%20Automation/dist/report.gif)
