@@ -13,7 +13,7 @@ Project is created with:
 * Python 2.7 : Source Code is written in Python language.
 * Libraries : Reportlab - To generate Pdfs, Openpyxl - To read data from excel file , Metaplotlib - To draw graphs inside Pdfs.
 * Pyinstaller : To convert Python source code to .exe.
-* 	
+
 ## Setup
 To run this project, Clone it locally using cmd:
 
