@@ -28,5 +28,5 @@ C:\project>git clone https://github.com/BhuwaneshNainwal/Python-Automation/tree/
 
 ## Demo
 
-![](https://github.com/BhuwaneshNainwal/Python-Automation/blob/master/Report%20Card%20Automation/dist/report.gif = 250x250)
+![](https://github.com/BhuwaneshNainwal/Python-Automation/blob/master/Report%20Card%20Automation/dist/report.gif)
 
