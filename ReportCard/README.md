@@ -4,7 +4,7 @@
 * [Setup](#setup)
 
 ## General info
-This project generates report cards of all students by running .exe file. The idea is to replicate [this]([https://www.international-maths-olympiad.com/wp-content/uploads/2021/08/BSR-Sample.pdf](https://www.international-maths-olympiad.com/wp-content/uploads/2021/08/ESR-Sample.pdf)) till Section 2. As an input we need an excel file in which result of all the students is present and their pictures are also available , and both types of files by default is available in this project (You can replace it with your one). By running pdfGenerator.exe file, in few seconds you will notice that Pdfs are being generated as per the information.  
+This project generates report cards of all students by running .exe file. The idea is to replicate [this](https://www.international-maths-olympiad.com/wp-content/uploads/2021/08/ESR-Sample.pdf) till Section 2. As an input we need an excel file in which result of all the students is present and their pictures are also available , and both types of files by default is available in this project (You can replace it with your one). By running pdfGenerator.exe file, in few seconds you will notice that Pdfs are being generated as per the information.  
 	
 ## Technologies
 Project is created with:
